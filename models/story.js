@@ -1,18 +1,10 @@
 const mongoose = require("mongoose");
 
 const storySchema = new mongoose.Schema({
-//   slide: {
-//     type: [String],
-//     required: true,
-//   },
-//   likes: {
-//     type: Number,
-//     default: 0,
-//   },
-//   bookmark: {
-//     type: Boolean,
-//     default: 0,
-//   },
+  user: {
+    type: String,
+    required: true,
+  },
 });
 
 const Story = mongoose.model("Story",storySchema);
