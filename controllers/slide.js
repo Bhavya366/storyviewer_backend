@@ -59,13 +59,19 @@ exports.getFilteredCategories = async(req,res) =>{
     let search = req.query.search || "";
     try {
         let slides = await Slide.find();
+        
         let slide = "";
-        slide = await Slide.find({ category: { $regex: search, $options: "i" } })
-                .where('category')
-                .in(categories)
-
+        if(categories === "All"){
+          slide = slides;
+        }
+        else{
+          slide = await Slide.find({ category: { $regex: search, $options: "i" } })
+          .where('category')
+          .in(categories)
+        }
         res.send({
             slide,
+            categories
         })
     }
     catch (err) {

@@ -12,6 +12,7 @@ slideRouter.route("/")
     .get(getAllCategories)
     .post(authenticateUser,addSlide)
     .put(authenticateUser,updateSlideById);
+    
 slideRouter.route('/getFilteredCategory').get(getFilteredCategories)
 slideRouter.route('/getSlides')
     .get(getSlides)
