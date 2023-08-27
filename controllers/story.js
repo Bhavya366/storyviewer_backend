@@ -1,6 +1,8 @@
 const Story = require("../models/story");
 const Slide = require('../models/slide');
 
+
+//all stories
 exports.getStories = async (req, res) => {
   try {
     const filter = {};
@@ -29,6 +31,7 @@ exports.getStories = async (req, res) => {
   }
 };
 
+//adding new story and each story consists n slides and those n slides will carry this storyId among them.
 exports.addStory = async (req, res) => {
   const newStory = new Story({
     user : req.body.user

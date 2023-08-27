@@ -9,7 +9,7 @@ const slideSchema = new mongoose.Schema({
   },
   heading:{
     type:String,
-    required:true,
+    required: true,
   },
   imageLink:{
     type: String,
@@ -21,7 +21,7 @@ const slideSchema = new mongoose.Schema({
   },
   category:{
     type:String,
-    required:true,
+    required: true,
   },
   likeCount: {
     type: Number,
@@ -29,7 +29,19 @@ const slideSchema = new mongoose.Schema({
   },
   bookmark:{
     type:Boolean,
-    default:false
+    default: false
+  },
+  bookedBy:{
+    type:Array,
+    required:true,
+  },
+  likedBy:{
+    type:Array,
+    required:true,
+  },
+  user:{
+    type:String,
+    required:true,
   }
 });
 

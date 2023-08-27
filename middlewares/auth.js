@@ -1,9 +1,10 @@
 const jwt = require("jsonwebtoken");
 
+
+//authenticating user for adding and editing slides
+
 const authenticateUser = (req, res, next) => {
   const token = req.headers.authorization;
-  // console.log(req.headers)
-  // console.log(token)
   if (!token) {
     return res.status(401).json({ error: "Unauthorized" });
   }
